@@ -13,7 +13,7 @@ Y="\e[33m"
 N="\e[0m"
 
 
-USERID=(id -u)
+USERID=$(id -u)
 
 CHECK_ROOT(){
         if [ $USERID -ne 0 ]
