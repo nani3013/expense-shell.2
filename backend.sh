@@ -43,17 +43,18 @@ CHECK_ROOT(){
         
          dnf install nodejs -y &>>$LOG_FILE
          VALIDATE $? "Install nodejs"
-         
-         id expense
+
+         id expense &>>$LOG_FILE
 
          if [ $? -ne 0 ]
          then
             echo -e "expense user is not exits,.. $G creating $N"
+         useradd expense &>>$LOG_FILE
+         VALIDATE $? "creating expense user"
          else
             echo -e "expense user is already exit...$Y SKIPPING $N"
          fi 
-         useradd expense
-         VALIDATE $? "creating expense user"
+         
          
 
 
